@@ -52,7 +52,7 @@ export default {
         hideModeSwitch: true,
         toolbarItems: this.field.buttons,
         events: {
-          change: () => this.handleChange(this.editor.getMarkdown())
+          change: () => this.handleChange(this.editor.getMarkdown().replace(/(<([^>]+)>)/ig, ""))
         },
       })
     },
